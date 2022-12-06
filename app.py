@@ -33,10 +33,10 @@ def generate_answer():
     st.session_state.history.append({"message": message_bot, "is_user": False})
 
 
-st.sidebar.text_input("Talk to the bot", key="input_text", on_change=generate_answer)
+st.text_input("Talk to the bot", key="input_text", on_change=generate_answer)
 
 for chat in st.session_state.history:
-    
+
     st_message(**chat)  # unpacking
 # Footer
 
