@@ -36,7 +36,7 @@ def generate_answer():
 st.sidebar.text_input("Talk to the bot", key="input_text", on_change=generate_answer)
 
 for chat in st.session_state.history:
-    st.sidebar.st_message(**chat)  # unpacking
+    st.sidebar.st_message(**chat, is_user=True)  # unpacking
 # Footer
 
 
