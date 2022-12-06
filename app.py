@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_chat import message as st_message
+import streamlit.components.v1 as components
 from transformers import BlenderbotTokenizer
 from transformers import BlenderbotForConditionalGeneration
 
@@ -18,6 +19,11 @@ if "history" not in st.session_state:
     st.session_state.history = []
 
 st.title("Conversational A.I chatbot using BERT")
+
+HtmlFile = open("home.html", 'r', encoding='utf-8')
+source_code = HtmlFile.read() 
+# print(source_code)
+components.html(source_code)
 
 
 def generate_answer():
